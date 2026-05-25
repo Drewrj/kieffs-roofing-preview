@@ -147,6 +147,34 @@ body{font-family:'Inter',sans-serif;color:#1e293b;background:#f8fafc;-webkit-fon
 .dark-card .review-author{font-size:16px;letter-spacing:-0.025em;font-weight:600;color:#fff}
 .dark-card .review-meta{font-size:13px;font-weight:500;color:var(--slate-400);margin-top:4px}
 
+/* ─── Contact Form ─── */
+.contact-section{padding:96px 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;max-width:1280px;margin:0 auto;padding:0 24px;align-items:start}
+.contact-form{background:#fff;border:1px solid var(--slate-200);border-radius:1.5rem;padding:48px}
+.contact-form h2{font-size:clamp(24px,3vw,32px);letter-spacing:-0.025em;font-weight:600;color:var(--slate-900);margin-bottom:8px}
+.contact-form .form-subtitle{font-size:15px;color:var(--slate-500);margin-bottom:32px;line-height:1.5}
+.form-group{margin-bottom:24px}
+.form-group label{display:block;font-size:14px;font-weight:600;color:var(--slate-700);margin-bottom:8px}
+.form-group label .req{color:var(--accent)}
+.form-input,.form-textarea{width:100%;padding:14px 16px;border:1px solid var(--slate-200);border-radius:10px;font-size:15px;font-family:inherit;color:var(--slate-800);background:var(--slate-50);transition:border-color 0.2s,box-shadow 0.2s;outline:none}
+.form-input:focus,.form-textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(var(--accent-rgb),0.12)}
+.form-textarea{min-height:120px;resize:vertical}
+.form-submit{width:100%;padding:16px;border:none;border-radius:10px;background:var(--accent);color:var(--accent-text);font-size:16px;font-weight:600;cursor:pointer;transition:background 0.2s;font-family:inherit}
+.form-submit:hover{background:var(--accent-hover)}
+.contact-info-card{background:var(--brand-dark);border-radius:1.5rem;padding:48px;color:#fff;position:relative;overflow:hidden}
+.contact-info-card::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle at 2px 2px,#fff 1px,transparent 0);background-size:32px 32px}
+.contact-info-card>*{position:relative;z-index:1}
+.contact-info-card h3{font-size:24px;letter-spacing:-0.025em;font-weight:600;margin-bottom:24px}
+.contact-info-items{display:flex;flex-direction:column;gap:24px}
+.contact-info-item{display:flex;gap:16px;align-items:flex-start}
+.contact-info-item .ci-icon{width:48px;height:48px;min-width:48px;border-radius:12px;background:rgba(var(--accent-rgb),0.15);display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.contact-info-item .ci-icon svg{width:22px;height:22px}
+.contact-info-item .ci-text{font-size:15px;color:var(--slate-300);line-height:1.55}
+.contact-info-item .ci-text strong{display:block;color:#fff;font-size:16px;font-weight:600;margin-bottom:4px}
+.contact-info-item .ci-text a{color:var(--accent);text-decoration:none}
+.contact-info-item .ci-text a:hover{text-decoration:underline}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr;gap:32px}.contact-form,.contact-info-card{padding:32px}}
+
 .cta-section{padding:96px 24px}
 .cta-island{background:var(--brand-dark);border-radius:2.5rem;padding:48px;position:relative;overflow:hidden;text-align:center}
 .cta-island::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle at 2px 2px,#fff 1px,transparent 0);background-size:40px 40px}
@@ -514,14 +542,68 @@ body{font-family:'Inter',sans-serif;color:#1e293b;background:#f8fafc;-webkit-fon
   </div>
 </section>
 
-<section class="cta-section" id="contact">
-  <div class="cta-island" style="max-width:1280px;margin:0 auto">
-    <span class="section-label" data-reveal="fade">Get in Touch</span>
-    <h2 data-reveal="up">Ready for a Roof That Lasts?</h2>
-    <p data-reveal="fade">Free estimates across Montcalm, Mecosta, Kent and Clinton counties. We&rsquo;ll come look at your roof, talk you through your options, and put it in writing.</p>
-    <a href="tel:9897625073" class="cta-phone" data-reveal="scale">(989) 762-5073</a>
-    <div class="cta-details" data-reveal="fade">121 Coral Rd NE, Stanton, MI 48888 &nbsp;|&nbsp; Mon&ndash;Fri 8:00 AM &ndash; 4:30 PM</div>
-    <a href="tel:9897625073" class="btn btn-accent" data-reveal="up" style="margin-top:24px">Call for a Free Estimate</a>
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label" data-reveal="fade">Get in Touch</span>
+      <h2 class="section-title" data-reveal="up">Ready for a Roof That Lasts?</h2>
+      <p class="section-subtitle" data-reveal="up">Free estimates across Montcalm, Mecosta, Kent and Clinton counties. Fill out the form or call us directly &mdash; we&rsquo;ll get back to you within one business day.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-form" data-reveal="up">
+        <h2>Contact Us</h2>
+        <p class="form-subtitle">Enter your details and we&rsquo;ll get back to you.</p>
+        <form action="mailto:Kieffsroofing@cmsinter.net" method="POST" enctype="text/plain">
+          <div class="form-group">
+            <label>First Name <span class="req">*</span></label>
+            <input type="text" class="form-input" name="name" required placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label>Email Address <span class="req">*</span></label>
+            <input type="email" class="form-input" name="email" required placeholder="you@email.com">
+          </div>
+          <div class="form-group">
+            <label>Message <span class="req">*</span></label>
+            <textarea class="form-textarea" name="message" required placeholder="Tell us about your project&hellip;"></textarea>
+          </div>
+          <button type="submit" class="form-submit">Submit</button>
+        </form>
+      </div>
+      <div class="contact-info-card" data-reveal="up">
+        <h3>Get in Touch Directly</h3>
+        <div class="contact-info-items">
+          <div class="contact-info-item">
+            <div class="ci-icon"><i data-lucide="phone" stroke-width="1.5"></i></div>
+            <div class="ci-text">
+              <strong>Call Us</strong>
+              <a href="tel:9897625073">(989) 762-5073</a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ci-icon"><i data-lucide="mail" stroke-width="1.5"></i></div>
+            <div class="ci-text">
+              <strong>Email</strong>
+              <a href="mailto:Kieffsroofing@cmsinter.net">Kieffsroofing@cmsinter.net</a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ci-icon"><i data-lucide="map-pin" stroke-width="1.5"></i></div>
+            <div class="ci-text">
+              <strong>Location</strong>
+              121 Coral Rd NE<br>Stanton, MI 48888
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ci-icon"><i data-lucide="clock" stroke-width="1.5"></i></div>
+            <div class="ci-text">
+              <strong>Hours</strong>
+              Monday &ndash; Friday<br>8:00 AM &ndash; 4:30 PM
+            </div>
+          </div>
+        </div>
+        <a href="tel:9897625073" class="btn btn-accent" style="width:100%;text-align:center;margin-top:32px;display:block">Call for a Free Estimate</a>
+      </div>
+    </div>
   </div>
 </section>
 
