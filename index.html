@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kieff's Roofing, Inc. | Three Generations of Craftsmanship | Stanton, MI</title>
+<meta name="description" content="Family-owned Mid-Michigan roofing, gutter, siding and crane service since 1960. Licensed, insured, BBB A+ accredited. Serving Montcalm, Mecosta, Kent and Clinton counties.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;color:#1e293b;background:#f8fafc;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.6}
+::selection{background:var(--accent);color:var(--accent-text)}
+
+:root{
+  --brand:#0066E3;
+  --brand-dark:#0a1929;
+  --brand-dark-rgb:10,25,41;
+  --brand-mid:#15294a;
+  --accent:#0066E3;
+  --accent-hover:#0053ba;
+  --accent-text:#ffffff;
+  --accent-rgb:0,102,227;
+  --slate-50:#f8fafc;
+  --slate-100:#f1f5f9;
+  --slate-200:#e2e8f0;
+  --slate-300:#cbd5e1;
+  --slate-400:#94a3b8;
+  --slate-500:#64748b;
+  --slate-600:#475569;
+  --slate-700:#334155;
+  --slate-800:#1e293b;
+  --slate-900:#0f172a;
+}
+
+.container{max-width:1280px;margin:0 auto;padding:0 24px}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 24px;transition:all 0.35s ease}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+.nav-logo img{height:48px;width:auto;display:block;transition:filter 0.35s ease;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.45))}
+.nav-logo-text{display:none;font-size:22px;letter-spacing:-0.025em;font-weight:700;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.3)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{color:rgba(255,255,255,0.9);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{background:var(--accent);color:var(--accent-text) !important;padding:10px 24px;border-radius:100px;font-size:14px;font-weight:600;transition:background 0.2s}
+.nav-cta:hover{background:var(--accent-hover)}
+
+.nav-scrolled{background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 1px 3px rgba(0,0,0,0.06);padding:10px 24px}
+.nav-scrolled .nav-logo img{filter:none}
+.nav-scrolled .nav-logo-text{color:var(--brand)}
+.nav-scrolled .nav-links a{color:var(--slate-600)}
+.nav-scrolled .nav-links a:hover{color:var(--accent)}
+.nav-scrolled .nav-cta{background:var(--brand);color:#fff !important}
+.nav-scrolled .nav-cta:hover{background:var(--brand-dark)}
+
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;clip-path:polygon(0 0,100% 0,100% 88%,50% 100%,0 88%)}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;background-color:var(--brand-dark)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(var(--brand-dark-rgb),0.85),rgba(var(--brand-dark-rgb),0.55) 45%,rgba(var(--brand-dark-rgb),0.92))}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:900px;padding:0 16px 80px;margin-top:80px}
+.hero-label{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block}
+.hero h1{font-size:clamp(32px,5vw,60px);letter-spacing:-0.025em;font-weight:600;color:#fff;line-height:1.1;margin-bottom:24px}
+.hero-intro{font-size:16px;color:var(--slate-300);max-width:640px;margin:0 auto 40px;line-height:1.625;font-weight:500}
+.hero-stats{display:flex;gap:48px;justify-content:center;margin-bottom:40px;flex-wrap:wrap}
+.hero-stat .number{font-size:36px;letter-spacing:-0.025em;font-weight:600;color:#fff}
+.hero-stat .label{font-size:14px;font-weight:500;color:var(--slate-400);margin-top:4px}
+.hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+.btn{padding:14px 32px;border-radius:100px;font-size:16px;font-weight:600;text-decoration:none;display:inline-block;transition:all 0.2s;border:none;cursor:pointer}
+.btn-accent{background:var(--accent);color:var(--accent-text)}
+.btn-accent:hover{background:var(--accent-hover)}
+.btn-outline-white{background:transparent;border:1px solid #fff;color:#fff}
+.btn-outline-white:hover{background:rgba(255,255,255,0.1)}
+.btn-brand{background:var(--brand);color:#fff}
+.btn-brand:hover{background:var(--brand-dark)}
+.btn-ghost-accent{background:rgba(var(--accent-rgb),0.12);color:var(--accent);font-size:14px;padding:10px 24px}
+.btn-ghost-accent:hover{background:rgba(var(--accent-rgb),0.22)}
+
+.section{padding:96px 0}
+.section-alt{background:var(--slate-50)}
+.section-header{text-align:center;margin-bottom:64px}
+.section-label{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;display:block}
+.section-title{font-size:clamp(28px,3.5vw,40px);letter-spacing:-0.025em;font-weight:600;color:var(--slate-900)}
+.section-subtitle{font-size:16px;color:var(--slate-600);max-width:640px;margin:12px auto 0;line-height:1.625;font-weight:400}
+
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.card{background:#fff;border-radius:1.5rem;padding:0;border:1px solid var(--slate-100);transition:all 0.3s;text-align:center;overflow:hidden}
+.card:hover{box-shadow:0 25px 50px -12px rgba(0,0,0,0.08),0 25px 50px -12px rgba(203,213,225,0.5);transform:translateY(-2px)}
+.card-photo{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;background:var(--slate-100)}
+.card-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s cubic-bezier(0.16,1,0.3,1)}
+.card:hover .card-photo img{transform:scale(1.04)}
+.card-icon{width:64px;height:64px;background:#fff;border:4px solid #fff;border-radius:1rem;display:flex;align-items:center;justify-content:center;margin:-32px auto 16px;color:var(--brand);position:relative;z-index:1;box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+.card-icon i{width:32px;height:32px}
+.card-body{padding:0 32px 32px}
+.card h3{font-size:20px;letter-spacing:-0.025em;font-weight:600;color:var(--slate-900);margin-bottom:12px}
+.card p{font-size:16px;color:var(--slate-600);line-height:1.625}
+
+.card-dark{background:var(--brand-dark);border-color:rgba(255,255,255,0.05);box-shadow:0 25px 50px -12px rgba(0,0,0,0.25)}
+.card-dark:hover{box-shadow:0 25px 50px -12px rgba(0,0,0,0.35)}
+.card-dark .card-icon{background:var(--brand-dark);border-color:var(--brand-dark);color:var(--accent)}
+.card-dark h3{color:#fff}
+.card-dark p{color:var(--slate-300)}
+.card-dark .card-photo{background:rgba(255,255,255,0.05)}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-label{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block}
+.about-title{font-size:clamp(28px,3.5vw,40px);letter-spacing:-0.025em;font-weight:600;color:var(--slate-900);margin-bottom:24px}
+.about-text{font-size:16px;color:var(--slate-600);line-height:1.625;margin-bottom:24px}
+.about-stats{display:flex;gap:48px;border-top:1px solid var(--slate-200);padding-top:32px;margin-top:32px;flex-wrap:wrap}
+.about-stats h4{font-size:24px;letter-spacing:-0.025em;font-weight:600;color:var(--slate-900);margin-bottom:4px}
+.about-stats p{font-size:14px;font-weight:500;color:var(--slate-500)}
+.about-features{display:flex;flex-direction:column;gap:32px}
+.about-feature{display:flex;gap:24px;align-items:flex-start}
+.about-feature-photo{width:96px;height:96px;min-width:96px;border-radius:1.25rem;overflow:hidden;background:var(--slate-100)}
+.about-feature-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.about-feature h3{font-size:20px;letter-spacing:-0.025em;font-weight:600;color:var(--slate-900);margin-bottom:8px}
+.about-feature p{font-size:16px;color:var(--slate-600);line-height:1.625}
+
+.gallery-section{padding:96px 0;background:var(--slate-50)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery-tile{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:1.25rem;background:var(--slate-100);cursor:pointer}
+.gallery-tile.tall{grid-row:span 2;aspect-ratio:auto}
+.gallery-tile.wide{grid-column:span 2}
+.gallery-tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s cubic-bezier(0.16,1,0.3,1)}
+.gallery-tile:hover img{transform:scale(1.05)}
+.gallery-caption{position:absolute;left:0;right:0;bottom:0;padding:16px 20px;color:#fff;font-size:14px;font-weight:500;background:linear-gradient(to top,rgba(0,0,0,0.7),rgba(0,0,0,0));opacity:0;transition:opacity 0.3s}
+.gallery-tile:hover .gallery-caption{opacity:1}
+
+.area-pills{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:32px}
+.area-pill{padding:10px 24px;background:#fff;border:1px solid var(--slate-100);border-radius:100px;font-size:14px;font-weight:500;color:var(--slate-700);transition:all 0.2s}
+.area-pill:hover{border-color:var(--brand);background:var(--slate-50)}
+
+.dark-island{background:var(--brand-dark);border-radius:3rem;margin:0 24px;padding:96px 24px;position:relative;overflow:hidden}
+.dark-island::before{content:'';position:absolute;inset:0;opacity:0.06;background-image:radial-gradient(circle at 2px 2px,#fff 1px,transparent 0);background-size:40px 40px}
+.dark-island .container{position:relative;z-index:1}
+.dark-island .section-label{color:var(--accent)}
+.dark-island .section-title{color:#fff}
+.dark-island .section-subtitle{color:var(--slate-400)}
+
+.dark-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:1.5rem;padding:32px;transition:all 0.3s}
+.dark-card:hover{background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.1);box-shadow:0 20px 40px rgba(0,0,0,0.2)}
+.dark-card .star-row{display:flex;gap:4px;margin-bottom:16px}
+.dark-card .star-row svg{width:16px;height:16px;color:#fbbf24}
+.dark-card .review-text{font-size:16px;color:rgba(255,255,255,0.78);line-height:1.7;font-style:italic;margin-bottom:24px}
+.dark-card .review-author{font-size:16px;letter-spacing:-0.025em;font-weight:600;color:#fff}
+.dark-card .review-meta{font-size:13px;font-weight:500;color:var(--slate-400);margin-top:4px}
+
+.cta-section{padding:96px 24px}
+.cta-island{background:var(--brand-dark);border-radius:2.5rem;padding:48px;position:relative;overflow:hidden;text-align:center}
+.cta-island::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle at 2px 2px,#fff 1px,transparent 0);background-size:40px 40px}
+.cta-island>*{position:relative;z-index:1}
+.cta-island .section-label{color:var(--accent);margin-bottom:8px}
+.cta-island h2{font-size:clamp(28px,3.5vw,40px);letter-spacing:-0.025em;font-weight:600;color:#fff;margin-bottom:16px}
+.cta-island>p{font-size:16px;color:var(--slate-300);max-width:640px;margin:0 auto 32px;line-height:1.625}
+.cta-phone{font-size:clamp(28px,5vw,48px);letter-spacing:-0.025em;font-weight:600;color:var(--accent);text-decoration:none;display:block;margin-bottom:12px}
+.cta-phone:hover{opacity:0.85}
+.cta-details{font-size:14px;font-weight:500;color:var(--slate-400);margin-bottom:12px}
+
+.footer{background:var(--brand-dark);color:var(--slate-300);padding:80px 0 48px;border-radius:3rem 3rem 0 0;margin-top:40px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:48px;margin-bottom:32px}
+.footer-brand{display:flex;align-items:center;gap:8px;margin-bottom:24px}
+.footer-brand img{height:60px;width:auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.35))}
+.footer-brand-text{display:none;font-size:24px;letter-spacing:-0.025em;font-weight:700;color:#fff}
+.footer-desc{font-size:14px;color:var(--slate-400);line-height:1.7;max-width:300px;margin-bottom:32px}
+.footer-social{display:flex;gap:12px}
+.footer-social a{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;color:var(--slate-400);transition:all 0.2s}
+.footer-social a:hover{background:var(--accent);color:#fff}
+.footer-social a i{width:16px;height:16px}
+.footer h4{font-size:18px;letter-spacing:-0.025em;font-weight:600;color:#fff;margin-bottom:24px}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:16px}
+.footer ul a{color:var(--slate-400);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
+.footer ul a:hover{color:var(--accent)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:500;color:var(--slate-500)}
+
+.mobile-cta{display:none;position:fixed;bottom:16px;left:16px;right:16px;background:var(--accent);color:#fff;padding:14px 20px;border-radius:100px;text-align:center;font-weight:600;text-decoration:none;font-size:15px;z-index:999;box-shadow:0 10px 30px rgba(0,0,0,0.25)}
+
+[data-reveal]{opacity:0;transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1)}
+[data-reveal="up"]{transform:translateY(32px)}
+[data-reveal="fade"]{transform:none}
+[data-reveal="scale"]{transform:scale(0.94)}
+[data-reveal].visible{opacity:1;transform:none}
+.hero-content [data-reveal]{transition-delay:calc(var(--i,0) * 0.1s)}
+
+.card,.dark-card,.area-pill,.gallery-tile{opacity:0;transform:translateY(20px);transition:opacity 0.6s cubic-bezier(0.16,1,0.3,1),transform 0.6s cubic-bezier(0.16,1,0.3,1),box-shadow 0.3s,border-color 0.3s,background 0.3s}
+.card-grid.visible .card,.testimonials-grid.visible .dark-card,.gallery-grid.visible .gallery-tile{opacity:1;transform:none}
+.card-grid.visible .card:nth-child(1),.testimonials-grid.visible .dark-card:nth-child(1),.gallery-grid.visible .gallery-tile:nth-child(1){transition-delay:0.05s}
+.card-grid.visible .card:nth-child(2),.testimonials-grid.visible .dark-card:nth-child(2),.gallery-grid.visible .gallery-tile:nth-child(2){transition-delay:0.12s}
+.card-grid.visible .card:nth-child(3),.testimonials-grid.visible .dark-card:nth-child(3),.gallery-grid.visible .gallery-tile:nth-child(3){transition-delay:0.19s}
+.card-grid.visible .card:nth-child(4),.gallery-grid.visible .gallery-tile:nth-child(4){transition-delay:0.26s}
+.card-grid.visible .card:nth-child(5),.gallery-grid.visible .gallery-tile:nth-child(5){transition-delay:0.33s}
+.card-grid.visible .card:nth-child(6),.gallery-grid.visible .gallery-tile:nth-child(6){transition-delay:0.40s}
+
+.area-pills.visible .area-pill{opacity:1;transform:none}
+.area-pills.visible .area-pill:nth-child(1){transition-delay:0.02s}
+.area-pills.visible .area-pill:nth-child(2){transition-delay:0.04s}
+.area-pills.visible .area-pill:nth-child(3){transition-delay:0.06s}
+.area-pills.visible .area-pill:nth-child(4){transition-delay:0.08s}
+.area-pills.visible .area-pill:nth-child(5){transition-delay:0.10s}
+.area-pills.visible .area-pill:nth-child(6){transition-delay:0.12s}
+.area-pills.visible .area-pill:nth-child(7){transition-delay:0.14s}
+.area-pills.visible .area-pill:nth-child(8){transition-delay:0.16s}
+.area-pills.visible .area-pill:nth-child(9){transition-delay:0.18s}
+.area-pills.visible .area-pill:nth-child(10){transition-delay:0.20s}
+
+@media(max-width:1024px){
+  .card-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .hero{min-height:100vh;clip-path:polygon(0 0,100% 0,100% 93%,50% 100%,0 93%)}
+  .hero h1{font-size:32px}
+  .hero-content{margin-top:100px;padding-bottom:120px}
+  .card-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .nav-links{display:none}
+  .dark-island{border-radius:1.5rem;margin:0 12px;padding:64px 16px}
+  .footer{border-radius:1.5rem 1.5rem 0 0}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center}
+  .cta-island{padding:40px 24px;border-radius:1.5rem}
+  .about-stats{gap:32px}
+  .gallery-grid{grid-template-columns:1fr}
+  .mobile-cta{display:block}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="main-nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="https://pub.hyperagent.com/api/published/pbf01KS4GY38N_6FN5E4KRV938BPR2/kieffs_logo.png" alt="Kieff's Roofing, Inc. logo">
+      <span class="nav-logo-text">KIEFF'S ROOFING</span>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#areas">Service Areas</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact" class="nav-cta">Get a Quote</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero" id="hero">
+  <div class="hero-bg" style="background-image:url('https://static.wixstatic.com/media/1dc46d_9d4e6498af2d43c9ad73cd5b273acb11~mv2.jpg')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-label" data-reveal="fade" style="--i:0">Mid-Michigan • Since 1960</span>
+    <h1 data-reveal="up" style="--i:1">Three Generations of<br>Craftsmanship on Every Roof</h1>
+    <p class="hero-intro" data-reveal="up" style="--i:2">Family-owned and operated in Stanton since 1960. From asphalt shingles to standing seam metal, we&rsquo;ve protected Mid-Michigan homes and businesses for 65 years &mdash; one careful, code-perfect roof at a time.</p>
+    <div class="hero-stats" data-reveal="up" style="--i:3">
+      <div class="hero-stat">
+        <div class="number">65</div>
+        <div class="label">Years Family-Owned</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">4.9&#9733;</div>
+        <div class="label">Google Rating</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">A+</div>
+        <div class="label">BBB Accredited</div>
+      </div>
+    </div>
+    <div class="hero-buttons" data-reveal="up" style="--i:4">
+      <a href="tel:9897625073" class="btn btn-accent">Call (989) 762-5073</a>
+      <a href="#services" class="btn btn-outline-white">Our Services</a>
+    </div>
+  </div>
+</div>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label" data-reveal="fade">What We Do</span>
+      <h2 class="section-title" data-reveal="up">Full-Service Roofing &amp; Exterior</h2>
+      <p class="section-subtitle" data-reveal="up">From a single torn shingle to a complete tear-off and replacement, we handle every layer of your home&rsquo;s exterior. Residential and commercial. Licensed, bonded, insured.</p>
+    </div>
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-photo"><img src="https://static.wixstatic.com/media/1dc46d_4bf2194d1c3c413c9ca442f724b955f0~mv2.png" alt="Asphalt shingle roofing"></div>
+        <div class="card-icon"><i data-lucide="home" stroke-width="1.5"></i></div>
+        <div class="card-body">
+          <h3>Asphalt Shingle Roofing</h3>
+          <p>Architectural and dimensional shingles installed by the same crews you&rsquo;ll see on the job from start to finish.</p>
+        </div>
+      </div>
+
+      <div class="card card-dark">
+        <div class="card-photo"><img src="https://plus.unsplash.com/premium_photo-1733514691417-1e31ea6ec492?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="Standing seam metal roofing"></div>
+        <div class="card-icon"><i data-lucide="triangle" stroke-width="1.5"></i></div>
+        <div class="card-body">
+          <h3>Standing Seam Metal</h3>
+          <p>Long-life standing seam and ribbed metal systems for homes, barns, and commercial buildings across the region.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-photo"><img src="https://static.wixstatic.com/media/13e3d2_8e8f62c67cea4812968ee97c88cdd216~mv2.jpg" alt="Seamless gutter installation"></div>
+        <div class="card-icon"><i data-lucide="droplet" stroke-width="1.5"></i></div>
+        <div class="card-body">
+          <h3>Seamless Gutters</h3>
+          <p>WeatherGuard gutter helmet, 5&Prime; and 6&Prime; seamless aluminum gutters, downspouts, and leaf protection.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-photo"><img src="https://static.wixstatic.com/media/13e3d2_9d64e4ad761a42e89f09d58e23b32c75~mv2.png" alt="Siding and trim work"></div>
+        <div class="card-icon"><i data-lucide="layers" stroke-width="1.5"></i></div>
+        <div class="card-body">
+          <h3>Siding, Fascia &amp; Soffit</h3>
+          <p>Vinyl and fiber-cement siding plus full trim restoration. Cleaner lines, fewer drafts, better curb appeal.</p>
+        </div>
+      </div>
+
+      <div class="card card-dark">
+        <div class="card-photo"><img src="https://images.unsplash.com/photo-1723897917319-3958c7b4aaa1?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="Skylight installation"></div>
+        <div class="card-icon"><i data-lucide="sun" stroke-width="1.5"></i></div>
+        <div class="card-body">
+          <h3>Skylights &amp; Windows</h3>
+          <p>Velux skylight installs and replacement windows that look right and seal right &mdash; ask about combining with a new roof.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-photo"><img src="https://static.wixstatic.com/media/9a6588_9815d68bea634d449016efbe359bbdd0~mv2.jpg" alt="Crane and truss setting service"></div>
+        <div class="card-icon"><i data-lucide="construction" stroke-width="1.5"></i></div>
+        <div class="card-body">
+          <h3>Crane &amp; Truss Setting</h3>
+          <p>Our in-house crane sets trusses and rooftop HVAC for builders and GCs throughout Montcalm County and beyond.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section" id="gallery">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label" data-reveal="fade">Recent Work</span>
+      <h2 class="section-title" data-reveal="up">Roofs Built to Outlast the Mortgage</h2>
+      <p class="section-subtitle" data-reveal="up">A small slice of the projects we&rsquo;ve completed across Mid-Michigan. We&rsquo;d rather show you the work than talk about it.</p>
+    </div>
+    <div class="gallery-grid">
+
+      <div class="gallery-tile">
+        <img src="https://images.unsplash.com/photo-1512331327491-d03cb97d92b4?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="Architectural shingles">
+        <div class="gallery-caption">Architectural Shingle Replacement</div>
+      </div>
+
+      <div class="gallery-tile">
+        <img src="https://images.unsplash.com/photo-1679382915249-489422f49eb3?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="Metal roof house">
+        <div class="gallery-caption">Standing Seam Metal &mdash; Residential</div>
+      </div>
+
+      <div class="gallery-tile">
+        <img src="https://plus.unsplash.com/premium_photo-1666875812192-fad3548fe1f3?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="Tile roof close up">
+        <div class="gallery-caption">Premium Tile Installation</div>
+      </div>
+
+      <div class="gallery-tile">
+        <img src="https://images.unsplash.com/photo-1528223871781-8f4c984f6164?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="Shingle close up">
+        <div class="gallery-caption">Architectural Shingle Detail</div>
+      </div>
+
+      <div class="gallery-tile">
+        <img src="https://images.unsplash.com/photo-1546552356-3fae876a61ca?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="Siding install">
+        <div class="gallery-caption">Full Siding Replacement</div>
+      </div>
+
+      <div class="gallery-tile">
+        <img src="https://images.unsplash.com/photo-1760191771434-192134d45983?fm=jpg&q=60&w=1200&auto=format&fit=crop" alt="Weathered shingle detail">
+        <div class="gallery-caption">Historic Roof Restoration</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <span class="about-label" data-reveal="fade">About Kieff's Roofing</span>
+        <h2 class="about-title" data-reveal="up">A Family Business Built on Roofs That Last</h2>
+        <p class="about-text" data-reveal="up">Kieff&rsquo;s Roofing was started in Stanton in 1960. Sixty-five years later, the company is still family-owned and -operated &mdash; Brad, Brian and Jarrod Kieff lead the same crews their father and grandfather built.</p>
+        <p class="about-text" data-reveal="up">We&rsquo;re a Mid-Michigan company through and through. We&rsquo;ve roofed houses in three generations of the same family, set trusses on barns we&rsquo;ll drive past for decades, and replaced more gutters in Montcalm County than we can count. We&rsquo;d rather earn the next job than chase the last one.</p>
+        <a href="#contact" class="btn btn-ghost-accent" data-reveal="up">Get a Free Estimate</a>
+        <div class="about-stats" data-reveal="up">
+          <div>
+            <h4>1960</h4>
+            <p>Founded in Stanton, MI</p>
+          </div>
+          <div>
+            <h4>3rd Gen</h4>
+            <p>Family Ownership</p>
+          </div>
+          <div>
+            <h4>30+ yrs</h4>
+            <p>BBB A+ Accredited</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-features" data-reveal="up">
+
+        <div class="about-feature">
+          <div class="about-feature-photo"><img src="https://plus.unsplash.com/premium_photo-1663133706259-036140ea027c?fm=jpg&q=60&w=400&auto=format&fit=crop" alt="Crew on residential roof"></div>
+          <div>
+            <h3>Family-Owned, Locally Run</h3>
+            <p>The Kieff name has been on the truck since 1960. The crews are local, the office is local, the warranties are honored locally.</p>
+          </div>
+        </div>
+
+        <div class="about-feature">
+          <div class="about-feature-photo"><img src="https://images.unsplash.com/photo-1614938384397-23ae6168814f?fm=jpg&q=60&w=400&auto=format&fit=crop" alt="Skylight detail"></div>
+          <div>
+            <h3>EPA Lead-Safe Certified</h3>
+            <p>Older homes deserve careful hands. Our crews are EPA Lead-Safe Renovator certified for siding and trim work on pre-1978 homes.</p>
+          </div>
+        </div>
+
+        <div class="about-feature">
+          <div class="about-feature-photo"><img src="https://images.unsplash.com/photo-1675671509845-a5184ef9c4c6?fm=jpg&q=60&w=400&auto=format&fit=crop" alt="Home exterior"></div>
+          <div>
+            <h3>BBB A+ for 30+ Years</h3>
+            <p>An A+ Better Business Bureau rating maintained for three decades. The kind of reputation that only comes from showing up the day you said you would.</p>
+          </div>
+        </div>
+
+        <div class="about-feature">
+          <div class="about-feature-photo"><img src="https://images.unsplash.com/photo-1571505280193-4b4e29712a77?fm=jpg&q=60&w=400&auto=format&fit=crop" alt="Hammer and roofing nails"></div>
+          <div>
+            <h3>Licensed, Bonded &amp; Insured</h3>
+            <p>Fully licensed by the Michigan Department of LARA, bonded, and insured. We bring our paperwork to every estimate.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="areas">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label" data-reveal="fade">Where We Work</span>
+      <h2 class="section-title" data-reveal="up">Proudly Serving Mid-Michigan</h2>
+      <p class="section-subtitle" data-reveal="up">Headquartered in Stanton, we cover Montcalm, Mecosta, Kent, and Clinton counties &mdash; including the Grand Rapids metro and the I-96 corridor.</p>
+    </div>
+    <div class="area-pills">
+      <div class="area-pill">Stanton</div>
+      <div class="area-pill">Greenville</div>
+      <div class="area-pill">Lakeview</div>
+      <div class="area-pill">Carson City</div>
+      <div class="area-pill">Sheridan</div>
+      <div class="area-pill">Big Rapids</div>
+      <div class="area-pill">Howard City</div>
+      <div class="area-pill">Belding</div>
+      <div class="area-pill">Ionia</div>
+      <div class="area-pill">Grand Rapids</div>
+      <div class="area-pill">Rockford</div>
+      <div class="area-pill">St. Johns</div>
+      <div class="area-pill">Edmore</div>
+      <div class="area-pill">Crystal</div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-island" id="reviews">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label" data-reveal="fade">Client Testimonials</span>
+      <h2 class="section-title" data-reveal="up">What Our Customers Say</h2>
+      <p class="section-subtitle" data-reveal="up">Real reviews from real Mid-Michigan customers &mdash; verified on Angi and Google. We&rsquo;re honored every time someone takes the time.</p>
+    </div>
+    <div class="card-grid testimonials-grid">
+
+      <div class="dark-card">
+        <div class="star-row">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+        </div>
+        <p class="review-text">&ldquo;Absolutely on cloud nine because of the experience we had with this company. The level of service was amazing, the attention to detail was superb, they did everything as promised, exactly on time, and left the place spotless.&rdquo;</p>
+        <div class="review-author">&mdash; Diana H.</div>
+        <div class="review-meta">Full roof replacement &middot; Angi</div>
+      </div>
+
+      <div class="dark-card">
+        <div class="star-row">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+        </div>
+        <p class="review-text">&ldquo;We had shingles blow off our roof after a harsh winter. When we called and explained our concerns, they came out the same day despite how busy they were. Very professional and completed the work promptly.&rdquo;</p>
+        <div class="review-author">&mdash; Marie K.</div>
+        <div class="review-meta">Storm damage repair &middot; Angi</div>
+      </div>
+
+      <div class="dark-card">
+        <div class="star-row">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+        </div>
+        <p class="review-text">&ldquo;They were on time, came on the day they said they would, very professional and cleaned up after the work was completed. I would definitely hire them for any roofing needs I have.&rdquo;</p>
+        <div class="review-author">&mdash; Cheryl F.</div>
+        <div class="review-meta">Skylight install &middot; Angi</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contact">
+  <div class="cta-island" style="max-width:1280px;margin:0 auto">
+    <span class="section-label" data-reveal="fade">Get in Touch</span>
+    <h2 data-reveal="up">Ready for a Roof That Lasts?</h2>
+    <p data-reveal="fade">Free estimates across Montcalm, Mecosta, Kent and Clinton counties. We&rsquo;ll come look at your roof, talk you through your options, and put it in writing.</p>
+    <a href="tel:9897625073" class="cta-phone" data-reveal="scale">(989) 762-5073</a>
+    <div class="cta-details" data-reveal="fade">121 Coral Rd NE, Stanton, MI 48888 &nbsp;|&nbsp; Mon&ndash;Fri 8:00 AM &ndash; 4:30 PM</div>
+    <a href="tel:9897625073" class="btn btn-accent" data-reveal="up" style="margin-top:24px">Call for a Free Estimate</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="https://pub.hyperagent.com/api/published/pbf01KS4GY38N_6FN5E4KRV938BPR2/kieffs_logo.png" alt="Kieff's Roofing, Inc.">
+          <span class="footer-brand-text">KIEFF'S ROOFING</span>
+        </div>
+        <p class="footer-desc">Family-owned roofing, siding, gutter and crane service in Stanton, Michigan since 1960. Three generations of Kieff family craftsmanship across Mid-Michigan.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i data-lucide="facebook" stroke-width="1.5"></i></a>
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram" stroke-width="1.5"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Asphalt Shingles</a></li>
+          <li><a href="#services">Metal Roofing</a></li>
+          <li><a href="#services">Seamless Gutters</a></li>
+          <li><a href="#services">Siding &amp; Trim</a></li>
+          <li><a href="#services">Skylights &amp; Windows</a></li>
+          <li><a href="#services">Crane Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Service Areas</h4>
+        <ul>
+          <li><a href="#areas">Stanton</a></li>
+          <li><a href="#areas">Greenville</a></li>
+          <li><a href="#areas">Grand Rapids</a></li>
+          <li><a href="#areas">Ionia</a></li>
+          <li><a href="#areas">Big Rapids</a></li>
+          <li><a href="#areas">St. Johns</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:9897625073" style="display:flex;align-items:center;gap:12px"><i data-lucide="phone" style="width:20px;height:20px;color:var(--accent);flex-shrink:0" stroke-width="1.5"></i>(989) 762-5073</a></li>
+          <li><a href="#contact" style="display:flex;align-items:flex-start;gap:12px"><i data-lucide="map-pin" style="width:20px;height:20px;color:var(--accent);flex-shrink:0" stroke-width="1.5"></i>121 Coral Rd NE<br>Stanton, MI 48888</a></li>
+          <li><a href="#contact" style="display:flex;align-items:center;gap:12px"><i data-lucide="clock" style="width:20px;height:20px;color:var(--accent);flex-shrink:0" stroke-width="1.5"></i>Mon&ndash;Fri 8am&ndash;4:30pm</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Kieff's Roofing, Inc. Family-owned since 1960. Licensed in Michigan.</p>
+      <div style="display:flex;gap:24px">
+        <a href="#" style="color:var(--slate-500);text-decoration:none">EPA Lead-Safe Certified</a>
+        <a href="#" style="color:var(--slate-500);text-decoration:none">BBB A+ Accredited</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="tel:9897625073" class="mobile-cta">Call (989) 762-5073</a>
+
+<script>
+(function(){
+  lucide.createIcons();
+  // Lucide replaces <i> with <svg>. Set fill='currentColor' so stars render in the color set by CSS on the svg.
+  document.querySelectorAll('.dark-card .star-row svg').forEach(function(s){s.style.fill='currentColor';s.style.stroke='currentColor';});
+  var nav=document.getElementById('main-nav'),hero=document.getElementById('hero');
+  var nIO=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)nav.classList.remove('nav-scrolled');else nav.classList.add('nav-scrolled')})},{threshold:0,rootMargin:'-60px 0px 0px 0px'});
+  nIO.observe(hero);
+  var r=document.querySelectorAll('[data-reveal]'),g=document.querySelectorAll('.card-grid,.testimonials-grid,.area-pills,.gallery-grid');
+  var io=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');io.unobserve(en.target)}})},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  r.forEach(function(el){io.observe(el)});
+  g.forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
